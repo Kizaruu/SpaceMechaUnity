@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.SpaceMecha.CSharp", "UnityVS.SpaceMecha.CSharp.csproj", "{C7AAA798-CC28-3E6B-8D60-27E7385A3FFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7AAA798-CC28-3E6B-8D60-27E7385A3FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7AAA798-CC28-3E6B-8D60-27E7385A3FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7AAA798-CC28-3E6B-8D60-27E7385A3FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7AAA798-CC28-3E6B-8D60-27E7385A3FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
