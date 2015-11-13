@@ -8,17 +8,18 @@ public class MainMecha : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public GameObject projectilesPref, explosion;
     public Animator anim;
+    public int limitXMin, limitYMin, limitXMax, limitYMax;
     public int resistance ;
     public float fireInterval, timeWhenFire;
     private bool isFire ;
     // Use this for initialization
     void Start () {
-	
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Input.GetKey(KeyCode.RightArrow))
+
+	    if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < limitXMax)
         {
             transform.position = new Vector3(
                 transform.position.x + speed,
@@ -27,7 +28,7 @@ public class MainMecha : MonoBehaviour {
             spriteRenderer.sprite = sprites[2];
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > limitXMin)
         {
             transform.position = new Vector3(
                 transform.position.x - speed,
@@ -36,7 +37,7 @@ public class MainMecha : MonoBehaviour {
             spriteRenderer.sprite = sprites[1];
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) && transform.position.y < limitYMax)
         {
             transform.position = new Vector3(
                 transform.position.x,
@@ -44,7 +45,7 @@ public class MainMecha : MonoBehaviour {
                 transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) && transform.position.y > limitYMin)
         {
             transform.position = new Vector3(
                 transform.position.x,
@@ -101,6 +102,26 @@ public class MainMecha : MonoBehaviour {
             transform.position.z), Quaternion.identity);
     }
     
+    bool CanGoRight()
+    {       
+        return true;
+    }
+
+    bool CanGoLeft()
+    {
+        return true;
+    }
+
+    bool CanGoUp()
+    {
+        return true;
+    }
+
+    bool CanGoDown()
+    {
+        return true;
+    }
+
     void Awake()
     {
         anim = GetComponent<Animator>();
