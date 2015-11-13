@@ -7,10 +7,11 @@ public class ServiceManager : MonoBehaviour {
     private string message;
     private bool isCreated, isLogged;
     private bool canSavePrefs;
+    private string token = "";
     public GameObject eventPanel;
     // Use this for initialization
     void Start () {
-	
+        //PlayerPrefs.DeleteAll();
 	}
 	void Awake()
     {
@@ -19,7 +20,7 @@ public class ServiceManager : MonoBehaviour {
 
         if (PlayerPrefs.HasKey("playerName"))
         {
-            client.GetProfilAsync(PlayerPrefs.GetString("playerName"), "");
+            client.GetProfilAsync(PlayerPrefs.GetString("playerName"), PlayerPrefs.GetString(PlayerPrefs.GetString("playerName")));
 
         }
         else
@@ -38,6 +39,8 @@ public class ServiceManager : MonoBehaviour {
             {
                 message = "Profil created";
 
+                this.token = e.Result.tokenid;
+
                 canSavePrefs = true;
                 isCreated = true;
             }
@@ -49,6 +52,12 @@ public class ServiceManager : MonoBehaviour {
         else
         {
             Debug.Log ("Erreur : " + e.Error.Message);
+        }
+
+        if (!isCreated)
+        {
+            PlayerPrefs.DeleteAll();
+            profilForm.gameObject.SetActive(true);
         }
     }
 
@@ -92,11 +101,13 @@ public class ServiceManager : MonoBehaviour {
         {
             isCreated = false;
             profilForm.gameObject.SetActive(false);
+            isLogged = true;
         } 
     if(canSavePrefs)
         {
             canSavePrefs = false;
             PlayerPrefs.SetString("playerName", profilForm.nickname.text);
+            PlayerPrefs.SetString(profilForm.nickname.text, this.token);
             PlayerPrefs.Save();
         }
     if(isLogged)
