@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
     public GameObject projectilePref;
     public float fireInterval;
+    public int score;
     public int resistance;
+    public Text finalScore; 
     public GameObject explosion;
     private float timeWhenFire;
 	// Use this for initialization
 	void Start () {
-	
+	    
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,7 @@ public class Enemy : MonoBehaviour {
         if (resistance <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
+            finalScore.text = MainMecha.UpdateScore(score, int.Parse(finalScore.text.ToString()));
             Destroy(gameObject);
         }
     }

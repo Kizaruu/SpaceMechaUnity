@@ -6,10 +6,12 @@ using System;
 public class MainMecha : MonoBehaviour {
     public float speed;
     public Sprite[] sprites;
+    private static int resultat;
     public SpriteRenderer spriteRenderer;
     public GameObject projectilesPref, explosion;
     public GameObject gameOver; 
     public Animator anim;
+    public Text scorePoints;
     public int limitXMin, limitYMin, limitXMax, limitYMax;
     public int resistance ;
     public float fireInterval, timeWhenFire;
@@ -89,6 +91,7 @@ public class MainMecha : MonoBehaviour {
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             gameOver.SetActive(true);
+           
             Destroy(gameObject);
         }
         else
@@ -96,7 +99,13 @@ public class MainMecha : MonoBehaviour {
             anim.SetTrigger("Blink");
         }
     }
-
+    static public string UpdateScore(int points, int score)
+    {
+        string newScore;
+        resultat = score + points;
+        newScore = resultat.ToString();
+        return newScore;
+    }
     public void Fire()
     {
         Instantiate(projectilesPref,

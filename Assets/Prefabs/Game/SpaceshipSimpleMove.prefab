@@ -55,7 +55,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePref: {fileID: 132058, guid: 720f04581fbd991428d310205dd86974, type: 2}
   fireInterval: 2
+  score: 5
   resistance: 4
+  finalScore: {fileID: 11473228, guid: 94a95755bfef46545a764d1794f369f0, type: 2}
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
   moveSpeed: .0500000007
 --- !u!212 &21223360
@@ -90,7 +92,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: score
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: finalScore
+      value: 
+      objectReference: {fileID: 11473228, guid: 94a95755bfef46545a764d1794f369f0,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105594}
