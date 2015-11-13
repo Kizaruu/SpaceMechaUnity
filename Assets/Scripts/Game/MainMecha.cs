@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 
@@ -7,6 +8,7 @@ public class MainMecha : MonoBehaviour {
     public Sprite[] sprites;
     public SpriteRenderer spriteRenderer;
     public GameObject projectilesPref, explosion;
+    public GameObject gameOver; 
     public Animator anim;
     public int limitXMin, limitYMin, limitXMax, limitYMax;
     public int resistance ;
@@ -86,6 +88,7 @@ public class MainMecha : MonoBehaviour {
         if (resistance <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
+            gameOver.SetActive(true);
             Destroy(gameObject);
         }
         else
@@ -102,25 +105,6 @@ public class MainMecha : MonoBehaviour {
             transform.position.z), Quaternion.identity);
     }
     
-    bool CanGoRight()
-    {       
-        return true;
-    }
-
-    bool CanGoLeft()
-    {
-        return true;
-    }
-
-    bool CanGoUp()
-    {
-        return true;
-    }
-
-    bool CanGoDown()
-    {
-        return true;
-    }
 
     void Awake()
     {
