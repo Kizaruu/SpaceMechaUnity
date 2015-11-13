@@ -57,9 +57,9 @@ MonoBehaviour:
   fireInterval: 2
   score: 5
   resistance: 4
-  finalScore: {fileID: 11473228, guid: 94a95755bfef46545a764d1794f369f0, type: 2}
+  finalScore: {fileID: 11437102, guid: 4e37ec87383f56f4f933fe694400e303, type: 2}
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
-  moveSpeed: .0500000007
+  moveSpeed: .200000003
 --- !u!212 &21223360
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,8 +100,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: finalScore
       value: 
-      objectReference: {fileID: 11473228, guid: 94a95755bfef46545a764d1794f369f0,
+      objectReference: {fileID: 11437102, guid: 4e37ec87383f56f4f933fe694400e303,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105594}
