@@ -544,9 +544,9 @@ public partial class EventGame {
     
     private EventS eventSField;
     
-    private PricePoolS[] pricepoolsField;
+    private PricePoolS[] pricePoolSField;
     
-    private PriceS[] pricesField;
+    private PriceS[] priceSField;
     
     /// <remarks/>
     public EventS eventS {
@@ -559,22 +559,22 @@ public partial class EventGame {
     }
     
     /// <remarks/>
-    public PricePoolS[] pricepools {
+    public PricePoolS[] pricePoolS {
         get {
-            return this.pricepoolsField;
+            return this.pricePoolSField;
         }
         set {
-            this.pricepoolsField = value;
+            this.pricePoolSField = value;
         }
     }
     
     /// <remarks/>
-    public PriceS[] prices {
+    public PriceS[] priceS {
         get {
-            return this.pricesField;
+            return this.priceSField;
         }
         set {
-            this.pricesField = value;
+            this.priceSField = value;
         }
     }
 }

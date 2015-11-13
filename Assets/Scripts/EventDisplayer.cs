@@ -46,7 +46,7 @@ public class EventDisplayer : MonoBehaviour {
             eventName.text = currentEvent.eventS.name;
             eventImg.sprite = ConvertByteToSprite(currentEvent.eventS.image);
             
-            foreach (var item in currentEvent.prices)
+            foreach (var item in currentEvent.priceS)
             {
                 GameObject price = Instantiate(eventPricePref);
                 price.transform.SetParent(scrollable);

@@ -36,7 +36,7 @@ public class ServiceManager : MonoBehaviour {
         {
             if (e.Result.id > 0)
             {
-                Debug.Log("Profil created");
+                message = "Profil created";
 
                 canSavePrefs = true;
                 isCreated = true;
@@ -48,7 +48,7 @@ public class ServiceManager : MonoBehaviour {
         }
         else
         {
-            message = "Erreur : " + e.Error.Message;
+            Debug.Log ("Erreur : " + e.Error.Message);
         }
     }
 
@@ -69,7 +69,7 @@ public class ServiceManager : MonoBehaviour {
         {
             if (e.Result.id > 0)
             {
-                Debug.Log("Welcome " + e.Result.name);
+                message =("Welcome " + e.Result.name);
                 isLogged = true;
             }
             else
@@ -77,6 +77,8 @@ public class ServiceManager : MonoBehaviour {
                 Debug.Log("Error get profil " + e.Error.Message);
             }
         }
+        else
+            Debug.Log("Erreur : " + e.Error.Message);
     }
 
     // Update is called once per frame
