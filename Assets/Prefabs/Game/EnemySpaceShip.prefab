@@ -55,9 +55,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePref: {fileID: 132058, guid: 720f04581fbd991428d310205dd86974, type: 2}
   fireInterval: .5
-  score: 0
-  resistance: 0
-  finalScore: {fileID: 11473228, guid: 94a95755bfef46545a764d1794f369f0, type: 2}
+  score: 5
+  resistance: 3
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
 --- !u!212 &21258994
 SpriteRenderer:
@@ -94,7 +93,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: score
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: finalScore
@@ -103,7 +102,7 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: resistance
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

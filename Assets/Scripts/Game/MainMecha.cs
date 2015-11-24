@@ -2,11 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class MainMecha : MonoBehaviour {
     public float speed;
     public Sprite[] sprites;
-    private static int resultat;
+    private static int resultat = 0;
     public SpriteRenderer spriteRenderer;
     public GameObject projectilesPref, explosion;
     public GameObject gameOver; 
@@ -16,8 +17,12 @@ public class MainMecha : MonoBehaviour {
     public int resistance ;
     public float fireInterval, timeWhenFire;
     private bool isFire ;
+
+    public List <UnityEngine.Object> projectilesPrefList;
+
     // Use this for initialization
     void Start () {
+        scorePoints.text = "-10";
     }
 	
 	// Update is called once per frame
@@ -82,6 +87,12 @@ public class MainMecha : MonoBehaviour {
             }
             timeWhenFire += Time.deltaTime;
         }
+                
+        if (resultat != int.Parse(scorePoints.text))
+        {
+            scorePoints.text = resultat.ToString();
+            
+        }
     }
 
     internal void GetDamage()
@@ -99,12 +110,13 @@ public class MainMecha : MonoBehaviour {
             anim.SetTrigger("Blink");
         }
     }
-    static public string UpdateScore(int points, int score)
+    static public void UpdateScore(int points)    //, int score)
     {
-        string newScore;
-        resultat = score + points;
-        newScore = resultat.ToString();
-        return newScore;
+        //string newScore;
+        //resultat = score + points;
+        //newScore = resultat.ToString();
+        resultat += points;
+        //return newScore;
     }
     public void Fire()
     {

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     public float fireInterval;
     public int score;
     public int resistance;
-    public Text finalScore; 
+    //public Text finalScore; 
     public GameObject explosion;
     private float timeWhenFire;
 	// Use this for initialization
@@ -37,8 +37,9 @@ public class Enemy : MonoBehaviour {
         if (resistance <= 0)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
-            finalScore.text = MainMecha.UpdateScore(score, int.Parse(finalScore.text.ToString()));
+            MainMecha.UpdateScore(score);
             Destroy(gameObject);
         }
+        
     }
 }
