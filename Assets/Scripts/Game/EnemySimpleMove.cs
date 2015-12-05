@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemySimpleMove : Enemy {
     
-    public float moveSpeed;
+    public float moveSpeed = 0.1f;
     // Use this for initialization
     void Start () {
 

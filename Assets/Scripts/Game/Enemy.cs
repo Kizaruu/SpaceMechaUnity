@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
         }
         timeWhenFire += Time.deltaTime;
     }
+
     public void Fire()
     {
         Instantiate(projectilePref,
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour {
             transform.position.y + 1,
             transform.position.z), Quaternion.identity);
     }
+
     public void GetDamage()
     {
         resistance--;
@@ -39,7 +41,22 @@ public class Enemy : MonoBehaviour {
             Instantiate(explosion, transform.position, Quaternion.identity);
             MainMecha.UpdateScore(score);
             Destroy(gameObject);
+			GameRun.counterShip--;
         }
         
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "LimitLow") {
+			Destroy (this.gameObject);
+			GameRun.counterShip--;
+		}
+        else if (col.gameObject.name == "MainMecha")
+        {
+            col.GetComponent<MainMecha>().GetDamage();
+            Destroy(this.gameObject);
+			GameRun.counterShip--;
+        }
     }
 }

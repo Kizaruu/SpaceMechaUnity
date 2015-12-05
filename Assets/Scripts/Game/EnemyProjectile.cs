@@ -18,12 +18,12 @@ public class EnemyProjectile : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "Limit")
-            Destroy(gameObject);
+        if (col.gameObject.name == "LimitLow")
+            Destroy(this.gameObject);
         if (col.gameObject.name == "MainMecha")
             {
             col.GetComponent<MainMecha>().GetDamage();
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

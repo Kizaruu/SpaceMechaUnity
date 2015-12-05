@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 7fd42064727259a49a0b7c5517d14ff4
-timeCreated: 1447424359
+timeCreated: 1448405334
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - starship: {fileID: 105594, guid: 5bc641154c98e1d4a831d6226116dc25, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
