@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
     public int resistance;
     //public Text finalScore; 
     public GameObject explosion;
-    private float timeWhenFire;
+    protected float timeWhenFire;
 	// Use this for initialization
 	void Start () {
 	    

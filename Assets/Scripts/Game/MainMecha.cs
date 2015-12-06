@@ -17,6 +17,7 @@ public class MainMecha : MonoBehaviour {
     public int resistance ;
     public float fireInterval, timeWhenFire;
     private bool isFire ;
+	private static float x, y;
 
     public List <UnityEngine.Object> projectilesPrefList;
 
@@ -27,6 +28,9 @@ public class MainMecha : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		x = transform.position.x;
+		y = transform.position.y;
 
 	    if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < limitXMax)
         {
@@ -131,4 +135,16 @@ public class MainMecha : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
     }
+
+	static public float[] GetPosition()
+	{
+		float[] position;
+		position = new float[2];
+
+		position[0] = x;
+		position[1]= y;
+
+		//(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+		return position;
+	}
 }

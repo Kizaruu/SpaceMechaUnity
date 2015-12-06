@@ -72,7 +72,7 @@ MonoBehaviour:
   projectilePref: {fileID: 132058, guid: 720f04581fbd991428d310205dd86974, type: 2}
   fireInterval: 8
   score: 5
-  resistance: 4
+  resistance: 2
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
   moveSpeed: .100000001
 --- !u!212 &21223360

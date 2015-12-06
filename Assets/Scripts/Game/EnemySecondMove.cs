@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class EnemySecondMove : Enemy {
-	public int limitXMax, limitXMin;
 	public float moveSpeed = 0.1f;
-	float deltaX, deltaY;
+	float delta, angleTrg;//X, deltaY;
+	float[] posMM;
 	int cpt = 0;
 	// Use this for initialization
 	void Start () {
@@ -16,45 +16,40 @@ public class EnemySecondMove : Enemy {
 
 		cpt--;
 
-		if (transform.position.x >= limitXMax) {
-
-			transform.position = new Vector3 (transform.position.x - moveSpeed, transform.position.y , transform.position.z);
-			ResetMove();
-			base.Update ();
-
-		} else if (transform.position.x <= limitXMin) {
-
-			transform.position = new Vector3 (transform.position.x + moveSpeed, transform.position.y , transform.position.z);
-			ResetMove();
-			base.Update ();
-
-		} else {
-
-			transform.position = new Vector3 (transform.position.x + deltaX, transform.position.y + deltaY , transform.position.z);
-			base.Update ();
-		}
+		transform.position = new Vector3 (transform.position.x + 2*delta, transform.position.y + delta , transform.position.z);
+		base.Update ();
+		
 
 		if (cpt <= 0) {
 			ResetMove();
 		}
+
+		posMM = MainMecha.GetPosition ();
+		if (posMM[0] - transform.position.x < 0)
+			angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x +12);
+		else
+			angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x -12);
+
+		transform.position = new Vector3 (transform.position.x + UnityEngine.Mathf.Cos(angleTrg) * moveSpeed
+		                                  , transform.position.y + UnityEngine.Mathf.Sin(angleTrg) * moveSpeed, 
+		                                  transform.position.z);
 	}
 
 	void ResetMove() {
-		cpt = UnityEngine.Random.Range (10, 500);
-		deltaX = UnityEngine.Random.Range (- moveSpeed/2, moveSpeed/2); 
-		if (deltaX < (moveSpeed / 4) && deltaX > (-moveSpeed / 4))
-			deltaX *= 2;
-		deltaY = UnityEngine.Random.Range (- moveSpeed, 0.0f);
+		cpt = UnityEngine.Random.Range (10, 400);
+		delta = UnityEngine.Random.Range (- moveSpeed, moveSpeed); 
+		if (delta < (moveSpeed / 3) && delta > (-moveSpeed / 3))
+			delta *= 2;
+		//deltaY = UnityEngine.Random.Range (- moveSpeed, 0.0f);
 
-		if (resistance == 2) {
+		if (resistance < 7) {
 			cpt /= 3;
-			deltaX *= 2;
-			deltaY -= (moveSpeed / 3);
-		}
-		if (resistance == 1) {
+			delta *= 2;
+		//	deltaY -= (moveSpeed / 3);
+		}else if (resistance < 3) {
 			cpt /= 10;
-			deltaX *= 3;
-			deltaY -= (moveSpeed / 2);
+			delta *= 3;
+		//	deltaY -= (moveSpeed / 2);
 		}
 	}
 }
