@@ -16,9 +16,9 @@ public class EnemySecondProjectile : MonoBehaviour {
 		Vector3 vPosMM = new Vector3 (tPosMM [0], tPosMM [1], 0.0f);
 
 		if (transform.position.x < tPosMM[0])
-			transform.RotateAround (vPosMM - transform.position, Vector3.forward, -speed/2);
+			transform.RotateAround (vPosMM - transform.position, Vector3.forward, -speed);
 		else
-			transform.RotateAround (vPosMM - transform.position, Vector3.forward, speed/2);
+			transform.RotateAround (vPosMM - transform.position, Vector3.forward, speed);
 
 		//angle += speed;
 		//if (angle > 360)
@@ -28,7 +28,7 @@ public class EnemySecondProjectile : MonoBehaviour {
 
 		//transform.RotateAround(MainMecha.
 		transform.position = new Vector3(transform.position.x,
-		                                 transform.position.y - (speed/2),
+		                                 transform.position.y - speed,
 		                                 transform.position.z);
 	}
 	
