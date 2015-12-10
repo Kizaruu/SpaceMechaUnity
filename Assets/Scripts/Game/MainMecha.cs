@@ -12,7 +12,7 @@ public class MainMecha : MonoBehaviour {
     public GameObject projectilesPref, explosion;
     public GameObject gameOver; 
     public Animator anim;
-    public Text scorePoints;
+    public Text scorePoints, life;
     public int limitXMin, limitYMin, limitXMax, limitYMax;
     public int resistance ;
     public float fireInterval, timeWhenFire;
@@ -97,6 +97,10 @@ public class MainMecha : MonoBehaviour {
             scorePoints.text = resultat.ToString();
             
         }
+
+		life.text = "";
+		for (int i = 0; i < resistance; i++)
+			life.text += "|";
     }
 
     internal void GetDamage()
@@ -106,6 +110,8 @@ public class MainMecha : MonoBehaviour {
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             gameOver.SetActive(true);
+
+			life.text = "";
            
             Destroy(gameObject);
         }

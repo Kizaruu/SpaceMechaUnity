@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemySecondProjectile : MonoBehaviour {
 	public float speed;
+	public GameObject explosion;
+	float angleTrg;
 	//float angle = 0;
 	// Use this for initialization
 	void Start () {
@@ -24,18 +26,27 @@ public class EnemySecondProjectile : MonoBehaviour {
 		//if (angle > 360)
 		//	speed -= 360;
 
-		transform.Rotate (Vector3.forward, 30);
+		transform.Rotate (Vector3.forward, 20);
+
+		angleTrg = UnityEngine.Mathf.Atan2(tPosMM[1]-transform.position.y,tPosMM[0] -transform.position.x);
+		
+		transform.position = new Vector3 (transform.position.x + UnityEngine.Mathf.Cos(angleTrg) * speed/2
+		                                  , transform.position.y + UnityEngine.Mathf.Sin(angleTrg) * speed/2, 
+		                                  transform.position.z);
 
 		//transform.RotateAround(MainMecha.
 		transform.position = new Vector3(transform.position.x,
-		                                 transform.position.y - speed,
+		                                 transform.position.y - 3*speed/4,
 		                                 transform.position.z);
 	}
 	
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.name == "LimitLow")
-			Destroy(this.gameObject);
+		if (col.gameObject.name == "LimitLow" || col.gameObject.name == "Projectile(Clone)") {
+			if (col.gameObject.name == "Projectile(Clone)") 
+				Instantiate (explosion, transform.position, Quaternion.identity);
+			Destroy (this.gameObject);
+		}
 		if (col.gameObject.name == "MainMecha")
 		{
 			col.GetComponent<MainMecha>().GetDamage();

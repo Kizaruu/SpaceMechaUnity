@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemySecondMove : Enemy {
-	public float moveSpeed = 0.1f;
+	public float moveSpeed = 0.1f, limitXmin = -35.0f, limitXmax = 35.0f, limitYmin = -5.0f, limitYmax = 30.0f;
 	float delta, angleTrg;//X, deltaY;
 	float[] posMM;
 	int cpt = 0;
@@ -25,14 +25,32 @@ public class EnemySecondMove : Enemy {
 		}
 
 		posMM = MainMecha.GetPosition ();
-		if (posMM[0] - transform.position.x < 0)
-			angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x +12);
-		else
-			angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x -12);
+		if (transform.position.x > limitXmax)
+			transform.position = new Vector3 (transform.position.x - moveSpeed,
+			                                  transform.position.y, 
+			                                  transform.position.z);
+		else if (transform.position.x < limitXmin)
+			transform.position = new Vector3 (transform.position.x + moveSpeed,
+			                                  transform.position.y, 
+			                                  transform.position.z);
+		else if (transform.position.y > limitYmin)
+			transform.position = new Vector3 (transform.position.x
+			                                  ,transform.position.y - moveSpeed, 
+			                                  transform.position.z);
+		else if (transform.position.y < limitYmin)
+			transform.position = new Vector3 (transform.position.x
+			                                  ,transform.position.y + moveSpeed, 
+			                                  transform.position.z);
+		else {
+			if (posMM[0] - transform.position.x < 0)
+				angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x +12);
+			else
+				angleTrg = UnityEngine.Mathf.Atan2(posMM[1]-transform.position.y + 20,posMM[0] -transform.position.x -12);
 
-		transform.position = new Vector3 (transform.position.x + UnityEngine.Mathf.Cos(angleTrg) * moveSpeed
-		                                  , transform.position.y + UnityEngine.Mathf.Sin(angleTrg) * moveSpeed, 
-		                                  transform.position.z);
+			transform.position = new Vector3 (transform.position.x + UnityEngine.Mathf.Cos(angleTrg) * moveSpeed
+			                                  , transform.position.y + UnityEngine.Mathf.Sin(angleTrg) * moveSpeed, 
+			                                  transform.position.z);
+		}
 	}
 
 	void ResetMove() {

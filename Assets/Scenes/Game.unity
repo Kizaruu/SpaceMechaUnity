@@ -231,6 +231,7 @@ GameObject:
   - 114: {fileID: 378268404}
   - 65: {fileID: 378268405}
   - 95: {fileID: 378268406}
+  - 136: {fileID: 378268407}
   m_Layer: 0
   m_Name: MainMecha
   m_TagString: Untagged
@@ -296,11 +297,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spriteRenderer: {fileID: 378268402}
-  projectilesPref: {fileID: 152612, guid: ba8a1e66f0c6f4244b82dec89826b167, type: 2}
+  projectilesPref: {fileID: 195882, guid: ba8a1e66f0c6f4244b82dec89826b167, type: 2}
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
   gameOver: {fileID: 304814825}
   anim: {fileID: 0}
   scorePoints: {fileID: 90494851}
+  life: {fileID: 1129926701}
   limitXMin: -32
   limitYMin: 0
   limitXMax: 32
@@ -319,8 +321,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.63537049, y: 2.66230702, z: .199999809}
-  m_Center: {x: .0433661602, y: -.265387863, z: 0}
+  m_Size: {x: 2.84808087, y: 1.72609937, z: .199999809}
+  m_Center: {x: .0220952518, y: -.733493268, z: 0}
 --- !u!95 &378268406
 Animator:
   serializedVersion: 3
@@ -338,6 +340,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!136 &378268407
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378268401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .58464241
+  m_Height: 3.24232626
+  m_Direction: 1
+  m_Center: {x: .0599999987, y: -.239999995, z: 0}
 --- !u!1 &434028350
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +384,7 @@ RectTransform:
   - {fileID: 304814828}
   - {fileID: 1781058583}
   - {fileID: 90494853}
+  - {fileID: 1129926703}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
@@ -503,6 +519,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &1129926700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1129926703}
+  - 222: {fileID: 1129926702}
+  - 114: {fileID: 1129926701}
+  m_Layer: 5
+  m_Name: Armor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1129926701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '|||'
+--- !u!222 &1129926702
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926700}
+--- !u!224 &1129926703
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129926700}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 434028351}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 8, y: -50}
+  m_SizeDelta: {x: 100, y: 50}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &1387898857
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,8 +744,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd42064727259a49a0b7c5517d14ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starship: {fileID: 105594, guid: 5bc641154c98e1d4a831d6226116dc25, type: 2}
-  starship2: {fileID: 151900, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
+  starship: {fileID: 148094, guid: 5bc641154c98e1d4a831d6226116dc25, type: 2}
+  starship2: {fileID: 199524, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
+  starship3: {fileID: 199524, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
   time: 10
 --- !u!114 &1424021387
 MonoBehaviour:
@@ -682,6 +765,10 @@ MonoBehaviour:
   resistance: 0
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
   moveSpeed: .100000001
+  limitXmin: 0
+  limitXmax: 0
+  limitYmin: 0
+  limitYmax: 0
 --- !u!1 &1448137692
 GameObject:
   m_ObjectHideFlags: 0
