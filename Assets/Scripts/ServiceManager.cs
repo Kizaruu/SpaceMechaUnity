@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class ApplicationModel : MonoBehaviour
+{
+    static public int idEvent = 0;
+    static public int idProfil = 0;
+}
+
 public class ServiceManager : MonoBehaviour {
     public ProfilForm profilForm;
     private ClientServices client = new ClientServices();
@@ -9,6 +15,8 @@ public class ServiceManager : MonoBehaviour {
     private bool canSavePrefs;
     private string token = "";
     public GameObject eventPanel;
+    //static public int idEvent = 0;
+
     // Use this for initialization
     void Start () {
         //PlayerPrefs.DeleteAll();
@@ -21,7 +29,6 @@ public class ServiceManager : MonoBehaviour {
         if (PlayerPrefs.HasKey("playerName"))
         {
             client.GetProfilAsync(PlayerPrefs.GetString("playerName"), PlayerPrefs.GetString(PlayerPrefs.GetString("playerName")));
-
         }
         else
         {
@@ -71,15 +78,16 @@ public class ServiceManager : MonoBehaviour {
             profilForm.message.text = "Nickname already exists";
     }
 
-   
+
     private void Client_GetProfilCompleted(object sender, GetProfilCompletedEventArgs e)
     {
         if (e.Error == null)
         {
             if (e.Result.id > 0)
             {
-                message =("Welcome " + e.Result.name);
+                message = ("Welcome " + e.Result.name);
                 isLogged = true;
+                ApplicationModel.idProfil = e.Result.id;
             }
             else
             {
@@ -87,7 +95,9 @@ public class ServiceManager : MonoBehaviour {
             }
         }
         else
+        { 
             Debug.Log("Erreur : " + e.Error.Message);
+        }
     }
 
     // Update is called once per frame

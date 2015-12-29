@@ -18,6 +18,7 @@ public class MainMecha : MonoBehaviour {
     public float fireInterval, timeWhenFire;
     private bool isFire ;
 	private static float x, y;
+    private ClientServices client = new ClientServices();
 
     public List <UnityEngine.Object> projectilesPrefList;
 
@@ -112,7 +113,10 @@ public class MainMecha : MonoBehaviour {
             gameOver.SetActive(true);
 
 			life.text = "";
-           
+
+            if (ApplicationModel.idEvent > 0 && ApplicationModel.idProfil > 0)
+                client.UpdateGroupSign(ApplicationModel.idEvent, ApplicationModel.idProfil, resultat);
+
             Destroy(gameObject);
         }
         else
