@@ -74,7 +74,7 @@ MonoBehaviour:
   score: 5
   resistance: 2
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
-  moveSpeed: .100000001
+  moveSpeed: .0799999982
 --- !u!212 &21219288
 SpriteRenderer:
   m_ObjectHideFlags: 1

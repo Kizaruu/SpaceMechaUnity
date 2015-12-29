@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 198890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.6000004, y: 19.3999996, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,9 +72,9 @@ MonoBehaviour:
   projectilePref: {fileID: 186074, guid: 48486e2a17636394785d810644a8a07d, type: 2}
   fireInterval: 8
   score: 100
-  resistance: 22
+  resistance: 25
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
-  moveSpeed: .00999999978
+  moveSpeed: .00800000038
 --- !u!212 &21289858
 SpriteRenderer:
   m_ObjectHideFlags: 1

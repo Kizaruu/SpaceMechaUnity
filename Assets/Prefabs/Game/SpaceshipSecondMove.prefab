@@ -73,9 +73,9 @@ MonoBehaviour:
   projectilePref: {fileID: 165230, guid: 86754c40a0263f848a32f27198a11ce0, type: 2}
   fireInterval: 3
   score: 50
-  resistance: 6
+  resistance: 5
   explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
-  moveSpeed: .150000006
+  moveSpeed: .119999997
   limitXmin: 0
   limitXmax: 0
   limitYmin: 0

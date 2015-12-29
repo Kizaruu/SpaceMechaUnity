@@ -746,7 +746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starship: {fileID: 148094, guid: 5bc641154c98e1d4a831d6226116dc25, type: 2}
   starship2: {fileID: 199524, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
-  starship3: {fileID: 199524, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
+  starship3: {fileID: 198890, guid: b044bea80a4b9cc41b98c29a8541a6b0, type: 2}
   time: 10
 --- !u!114 &1424021387
 MonoBehaviour:

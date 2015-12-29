@@ -45,6 +45,7 @@ public class EventDisplayer : MonoBehaviour {
             window.gameObject.SetActive(true);
             eventName.text = currentEvent.eventS.name;
             eventImg.sprite = ConvertByteToSprite(currentEvent.eventS.image);
+            startBtn.gameObject.SetActive(true);
             
             foreach (var item in currentEvent.priceS)
             {
