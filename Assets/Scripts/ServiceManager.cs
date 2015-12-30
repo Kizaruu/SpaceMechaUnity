@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ApplicationModel : MonoBehaviour
 {
-    static public int idEvent = 0;
-    static public int idProfil = 0;
+    static public int idEvent = -1;
+    static public int idProfil = -1;
 }
 
 public class ServiceManager : MonoBehaviour {
@@ -15,7 +15,6 @@ public class ServiceManager : MonoBehaviour {
     private bool canSavePrefs;
     private string token = "";
     public GameObject eventPanel;
-    //static public int idEvent = 0;
 
     // Use this for initialization
     void Start () {

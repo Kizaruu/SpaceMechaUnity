@@ -18,6 +18,7 @@ public class MainMecha : MonoBehaviour {
     public float fireInterval, timeWhenFire;
     private bool isFire ;
 	private static float x, y;
+    public GameObject score;
     private ClientServices client = new ClientServices();
 
     public List <UnityEngine.Object> projectilesPrefList;
@@ -114,9 +115,9 @@ public class MainMecha : MonoBehaviour {
 
 			life.text = "";
 
-            if (ApplicationModel.idEvent > 0 && ApplicationModel.idProfil > 0)
+            if (ApplicationModel.idEvent >= 0 && ApplicationModel.idProfil >= 0)
                 client.UpdateGroupSign(ApplicationModel.idEvent, ApplicationModel.idProfil, resultat);
-
+            GameRun.gameOver = true;
             Destroy(gameObject);
         }
         else

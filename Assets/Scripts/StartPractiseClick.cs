@@ -5,7 +5,7 @@ public class StartPractiseClick : MonoBehaviour {
 
     public void OnClick()
     {
-        ApplicationModel.idEvent = 0;
+        ApplicationModel.idEvent = -1;
         Application.LoadLevel(1);
     }
 }
