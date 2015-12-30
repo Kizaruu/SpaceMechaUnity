@@ -16,7 +16,7 @@ public class GameRun : MonoBehaviour {
 	int maxRateBoss;
     public static Boolean gameOver = false;
     public Vector2 scrollPosition = new Vector2();
-    public string longString = "";
+    public string longString;
     //ArrayList test;
     string resAllScores = ""; 
 
@@ -25,7 +25,7 @@ public class GameRun : MonoBehaviour {
         StartCoroutine("CreateStarship");
 		totalCpt = 0;
 		maxRateBoss = 30;
-
+        longString = "";
         clientServices.GetAllScoresCompleted += ClientServices_GetAllScoresCompleted;
         
     }
