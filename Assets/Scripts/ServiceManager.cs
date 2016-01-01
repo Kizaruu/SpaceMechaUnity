@@ -5,6 +5,7 @@ public class ApplicationModel : MonoBehaviour
 {
     static public int idEvent = -1;
     static public int idProfil = -1;
+    static public string playerName = "Player";
 }
 
 public class ServiceManager : MonoBehaviour {
@@ -87,6 +88,7 @@ public class ServiceManager : MonoBehaviour {
                 message = ("Welcome " + e.Result.name);
                 isLogged = true;
                 ApplicationModel.idProfil = e.Result.id;
+                ApplicationModel.playerName = e.Result.name;
             }
             else
             {
