@@ -10,7 +10,7 @@ public class MainMecha : MonoBehaviour {
     private static int resultat = 0;
     public SpriteRenderer spriteRenderer;
     public GameObject projectilesPref, explosion;
-    public GameObject gameOver; 
+    public GameObject gameOver, restartButton, quitButton; 
     public Animator anim;
     public Text scorePoints, life;
     public int limitXMin, limitYMin, limitXMax, limitYMax;
@@ -25,7 +25,12 @@ public class MainMecha : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        scorePoints.text = "-10";
+        //scorePoints.text = "-10";
+        resultat = 0;
+        GameRun.gameOver = false;
+        gameOver.SetActive(false);
+        restartButton.SetActive(false);
+        quitButton.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -112,6 +117,8 @@ public class MainMecha : MonoBehaviour {
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             gameOver.SetActive(true);
+            restartButton.SetActive(true);
+            quitButton.SetActive(true);
 
 			life.text = "";
 
@@ -125,13 +132,9 @@ public class MainMecha : MonoBehaviour {
             anim.SetTrigger("Blink");
         }
     }
-    static public void UpdateScore(int points)    //, int score)
+    static public void UpdateScore(int points)
     {
-        //string newScore;
-        //resultat = score + points;
-        //newScore = resultat.ToString();
         resultat += points;
-        //return newScore;
     }
     public void Fire()
     {

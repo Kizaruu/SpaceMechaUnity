@@ -94,7 +94,7 @@ public class GameRun : MonoBehaviour {
         if (gameOver == true)
         {
 
-            GUI.BeginGroup(new Rect(2 * Screen.width / 5, Screen.height / 5, Screen.width / 2, Screen.width / 2));
+            GUI.BeginGroup(new Rect(2 * Screen.width / 5, 2 * Screen.height / 5, Screen.width / 2, Screen.width / 2));
             scrollPosition = GUILayout.BeginScrollView(scrollPosition, GUILayout.Width(Screen.width / 5), GUILayout.Height(Screen.width / 3));
             GUILayout.Label(longString);
 

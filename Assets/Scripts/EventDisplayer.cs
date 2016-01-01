@@ -116,6 +116,8 @@ public class EventDisplayer : MonoBehaviour {
                 {
                     price.GetComponent<Image>().sprite = ConvertByteToSprite(item.image);
                 }
+
+                price.SetActive(true);
             }
         }
         
@@ -134,12 +136,16 @@ public class EventDisplayer : MonoBehaviour {
             }
             allPastEvents = null;
         }
-        
+        /*
         if (numEventWon > 0)
         {
             for (int i = 0; i < numEventWon; i++)
             {
-                if (UnityEditor.EditorUtility.DisplayDialog("Bravo Champion!", "Félicitation " + ApplicationModel.playerName +
+                //Dialog.DialogPlayer(eventsWon[i]);
+
+                System.
+
+                if (EditorUtility.DisplayDialog("Bravo Champion!", "Félicitation " + ApplicationModel.playerName +
                         " ! Lors de votre participation à l'event " + eventsWon[i].eventS.name + " vous avez gagné "+ 
                         eventsWon[i].priceS.Length.ToString() + " lot(s), voulez-vous télécharger ça maintenant?", "Oui!", "Non, plus tard..."))
                 {
@@ -147,7 +153,7 @@ public class EventDisplayer : MonoBehaviour {
                     {
                         string nomPrix = eventsWon[i].priceS[j].name;
 
-                        string savePath = UnityEditor.EditorUtility.SaveFilePanel("Félicitation " + ApplicationModel.playerName +
+                        string savePath = EditorUtility.SaveFilePanel("Félicitation " + ApplicationModel.playerName +
                             " ! vous avez gagné un lot lors de votre participation à l'event " + eventsWon[i].eventS.name + "!", "", nomPrix, "");
 
                         if (savePath != "")
@@ -158,12 +164,14 @@ public class EventDisplayer : MonoBehaviour {
                     PlayerPrefs.SetString("\n" + eventsWon[i].eventS.id.ToString(), "\n");
                     PlayerPrefs.Save();
                 }
+                
             }
             numEventWon = 0;
             eventsWon = null;
         }
+        */
 	}
-
+    
     private Sprite ConvertByteToSprite(byte[] data)
     {
         Texture2D text = new Texture2D(1, 1);
