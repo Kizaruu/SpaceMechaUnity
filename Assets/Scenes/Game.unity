@@ -1005,7 +1005,6 @@ GameObject:
   - 114: {fileID: 1424021383}
   - 114: {fileID: 1424021382}
   - 114: {fileID: 1424021386}
-  - 114: {fileID: 1424021387}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1083,30 +1082,10 @@ MonoBehaviour:
   starship: {fileID: 148094, guid: 5bc641154c98e1d4a831d6226116dc25, type: 2}
   starship2: {fileID: 199524, guid: 0c7492a5cbcd7844592bb46db58ba2c2, type: 2}
   starship3: {fileID: 198890, guid: b044bea80a4b9cc41b98c29a8541a6b0, type: 2}
+  starship4: {fileID: 142164, guid: 54c226f956c469e4b85941b2ec77e42c, type: 2}
   time: 10
   scrollPosition: {x: 0, y: 0}
   longString: This is a long-ish string
---- !u!114 &1424021387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424021381}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879a4db80bc6b6d4f83f8d1b353ab06b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePref: {fileID: 152612, guid: ba8a1e66f0c6f4244b82dec89826b167, type: 2}
-  fireInterval: 0
-  score: 0
-  resistance: 0
-  explosion: {fileID: 155498, guid: 30007061b8daf96429b2be34d0dad1c7, type: 2}
-  moveSpeed: .100000001
-  limitXmin: 0
-  limitXmax: 0
-  limitYmin: 0
-  limitYmax: 0
 --- !u!1 &1448137692
 GameObject:
   m_ObjectHideFlags: 0

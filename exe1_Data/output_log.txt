@@ -19,7 +19,7 @@ Loading C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMech
 Platform assembly: C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMecha-Unity\SpaceMechaUnity\exe1_Data\Managed\System.Web.Services.dll (this message is harmless)
 Loading C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMecha-Unity\SpaceMechaUnity\exe1_Data\Managed\System.Web.Services.dll into Unity Child Domain
 Platform assembly: C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMecha-Unity\SpaceMechaUnity\exe1_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.250 seconds
+- Completed reload, in  0.234 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -30,10 +30,10 @@ Platform assembly: C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetC
 Platform assembly: C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMecha-Unity\SpaceMechaUnity\exe1_Data\Managed\System.Configuration.dll (this message is harmless)
 Platform assembly: C:\Users\Geoffrey\Documents\Cours CESI RIL 1ere annee\projetCS\SpaceMecha-Unity\SpaceMechaUnity\exe1_Data\Managed\Mono.Security.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3224 -> priority: 1 
+  Thread -> id: 1e34 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.150809 ms
+UnloadTime: 4.904084 ms
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 334.
-Total: 0.878262 ms (FindLiveObjects: 0.016861 ms CreateObjectMapping: 0.017961 ms MarkObjects: 0.829510 ms  DeleteObjects: 0.013562 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 347.
+Total: 0.926640 ms (FindLiveObjects: 0.021626 ms CreateObjectMapping: 0.019060 ms MarkObjects: 0.871291 ms  DeleteObjects: 0.014295 ms)
 

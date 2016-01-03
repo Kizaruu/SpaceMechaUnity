@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿//using UnityEditor;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class EventDisplayer : MonoBehaviour {
     private ClientServices clientServices = new ClientServices();
-    private bool isEventFound, winnerPreviousEvents;
+    private bool isEventFound;                                      // winnerPreviousEvents;
     public Text eventName, playerName;
     public Image eventImg;
     public GameObject eventPricePref, startBtn;
@@ -143,7 +144,7 @@ public class EventDisplayer : MonoBehaviour {
             {
                 //Dialog.DialogPlayer(eventsWon[i]);
 
-                System.
+                //System.
 
                 if (EditorUtility.DisplayDialog("Bravo Champion!", "Félicitation " + ApplicationModel.playerName +
                         " ! Lors de votre participation à l'event " + eventsWon[i].eventS.name + " vous avez gagné "+ 

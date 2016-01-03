@@ -5,9 +5,7 @@ using System;
 
 public class GameRun : MonoBehaviour {
     private ClientServices clientServices = new ClientServices();
-    public GameObject starship;
-	public GameObject starship2;
-	public GameObject starship3;
+    public GameObject starship, starship2, starship3, starship4;
 	GameObject ennemi;
     public float time;
 	public static int counterShip = 0;
@@ -51,9 +49,13 @@ public class GameRun : MonoBehaviour {
 
 		    if (dice == 1 && totalCpt > 10) {
 			    ennemi = starship2;
-		    } else if (dice == 2 || dice == 3) {
+		    } else if (dice == 2) {
 			    ennemi = starship3;
-		    } else {
+            }
+            else if (dice == 3 || dice == 4)
+            {
+                ennemi = starship4;
+            } else {
 			    ennemi = starship;
 		    }
 		    counterShip++;

@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
         timeWhenFire += Time.deltaTime;
     }
 
-    public void Fire()
+    public virtual void Fire()
     {
         Instantiate(projectilePref,
             new Vector3(transform.position.x,
